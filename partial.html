@@ -1,0 +1,19 @@
+<script>
+    $(document).ready(function () {
+        $.getJSON('dados.json', function (data) {
+            var html = '';
+            $.each(data, function (entryIndex, entry) {
+                html += '<div class="entry p-4">';
+                html += '<h3 class="cor-principal">' + entry.prato + '</h3>';
+                html += '<img class="imgur" src='+entry.imagem+'>';
+                html += '<p class="obs">' + entry.obs + '</p>';
+                html += '<p class="cor-principal preco">';
+                html += entry.total;
+                html += ' euros</p>';
+                html += '</div>';
+            });
+            $('#cardapio').html(html);
+
+        });
+    });
+</script>

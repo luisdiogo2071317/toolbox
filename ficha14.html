@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ficha13.css">
+    <link rel="stylesheet" href="ficha11.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">Clique aqui</button>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                alert('Botão Clicado!');
+            });
+        });
+    </script>
+    <div id="app">
+        <button @click="botaoClique">Clique aqui!</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                botaoClique() {
+                    alert('Botão clicado!');
+                }
+            }
+        });
+    </script>
+    <input id="input" type="text" placeholder="nome">
+    <script>
+        $(document).ready(function () {
+            $('#input').change(function () {
+                alert('Olá ' + $(this).val());
+            });
+        });
+    </script>
+    <div id="app">
+        <input @change="inserirNome" v-model="nome" type="text" placeholder="nome">
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nome: ''
+            },
+
+            methods: {
+                inserirNome() {
+                    alert('Olá ' + this.nome);
+                }
+            }
+        });
+    </script>
+    <div id="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </div>
+    <script>
+        $(document).ready(function () {
+            var className = 'red-text';
+            $('#content').addClass(className);
+        });
+    </script>
+    <div id="app">
+        <div id="content" :class="className">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                className: 'red-text'
+            }
+        });
+    </script>
+    <div id="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </div>
+    <button id="button">Toggle</button>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                $('#content').toggle();
+            });
+        });
+    </script>
+    <div id="app">
+        <div id="content" v-if="visible">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+        <button @click="visible = !visible">Toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                visible: true
+            }
+        });
+    </script>
+    <span>Social Networks:</span>
+    <select id="networks"></select>
+    <script>
+        $(document).ready(function () {
+            var socialNetworks = ['Facebook', 'Twitter', 'YouTube', 'Instagram'];
+            var list;
+            $.each(socialNetworks, function (index, value) {
+                list += `<option value="${index}">${value}</option>`;
+            });
+            $('#networks').html(list);
+        });
+    </script>
+    <div id="app">
+        <span>Social Networks:</span>
+        <select id="networks">
+            <option v-for="(network, index) in socialNetworks" :value="index">
+                {{ network }}
+            </option>
+        </select>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                socialNetworks: ['Facebook', 'Twitter', 'YouTube', 'Instagram']
+            }
+        });
+    </script>
+    <div id="app">
+        <span>Lista de utilizadores:</span>
+        <ul id="users">
+            <li v-for="user in users">{{ user.first_name }}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                users: null
+            },
+            mounted: function () {
+                this.$http.get('https://reqres.in/api/users').then(response => {
+                    this.users = response.body.data;
+                });
+            }
+        });
+    </script>
+    <script>
+        new Vue({
+            el: '#cardapio',
+            created() {
+                this.fetchData();
+            },
+            data: {
+                posts: []
+            },
+            methods: {
+                fetchData() {
+                    axios.get('https://final-project-recording817f4.firebaseio.com/cardapio/.json').then(response
+                        => {
+                        this.posts = response.data;
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

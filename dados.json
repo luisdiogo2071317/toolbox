@@ -1,0 +1,30 @@
+[
+ {
+ "obs": "One dozen wings, come in hot or bbq flavour.",
+ "prato": "Chicken Wings",
+ "tipo": "appetizer",
+ "total": 7,
+ "imagem": "https://images-gmi-pmc.edge-generalmills.com/2031a382-71dc-4fd0-9ef7-72d011a9eebd.jpg"
+ },
+ {
+ "obs": "Delicious pan fried bread with olive oil.",
+ "prato": "Garlic Bread",
+ "tipo": "appetizer",
+ "total": 3,
+ "imagem": "http://img.taste.com.au/CkqSPiIf/w720-h480-cfill-q80/taste/2016/11/easy-garlic-bread-97118-1.jpeg"
+ },
+ {
+ "obs": "Great for sharing with friends. Tons of cheese and all the toppings.",
+ "prato": "Nachos",
+ "tipo": "appetizer",
+ "total": 14,
+ "imagem": "http://img.taste.com.au/O_5e5BxC/taste/2016/11/tray-baked-nachos-102903-1.jpeg"
+ },
+ {
+ "obs": "Crisp tortilla chips and dip.",
+ "prato": "Chips &amp; Salsa",
+ "tipo": "appetizer",
+ "total": 6,
+ "imagem": "https://static1.squarespace.com/static/5526fab1e4b0bfc7b239f2c0/552efdede4b070867db3cea0/55e47fcde4b05581cf8446d8/1444755275747/?format=2500w"
+ }
+]

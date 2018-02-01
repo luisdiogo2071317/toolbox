@@ -1,0 +1,21 @@
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  border: solid 2px black;
+}
+
+.flex-item {
+  border: solid 2px black;
+  margin: 15px;
+  padding: 50px;
+  order: #;
+  flex-shrink: #;
+  flex-grow: #;
+  flex-basis: #;
+  flex: # # #;
+  align-self: auto;
+}
+
+body {
+  position: absolute;
+}

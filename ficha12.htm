@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Through the Looking-Glass</title>
+    <link rel="stylesheet" href="ficha12.css">
+</head>
+<body>
+    
+    <div id="switcher" class="switcher">
+        <button id="switcher-default">Default</button>
+        <button id="switcher-reduz">Reduz</button>
+        <button id="switcher-aumenta">Aumenta</button>
+    </div>
+
+    <h1>Through the Looking-Glass</h1>
+    <div class="author">by Lewis Carroll</div>
+    <div class="chapter" id="chapter-1">
+        <h2 class="chapter-title">1. Looking-Glass House</h2>
+    <p>There was a book lying near Alice on the table, and while she sat watching the White King (for she was still a little anxious about him, and had the ink all ready to throw over him, in case he fainted again), she turned over the leaves, to find some part that she could read, <span class="spoken"> "&mdash;for it's all in some language I don't know,"</span> she said to herself.</p>
+    <p>It was like this.</p>
+    <div class="poem">
+        <h3 class="poem-title">YKCOWREBBAJ</h3>
+        <div class="poem-stanza">
+            <div>sevot yhtils eht dna ,gillirb sawT'</div>
+            <div>;ebaw eht ni elbmig dna eryg diD</div>
+            <div>,sevogorob eht erew ysmim llA</div>
+            <div>.ebargtuo shtar emom eht dnA</div>
+        </div>
+    </div>
+    <p>She puzzled over this for some time, but at last a bright thought struck her.<span class="spoken">"Why, it's a Looking-glass book, of course! And if I hold it up to a glass, the words will all go the right way again."</span></p>
+    <p>This was the poem that Alice read.</p>
+    <div class="poem">
+        <h3 class="poem-title">JABBERWOCKY</h3>
+        <div class="poem-stanza">
+            <div>'Twas brillig, and the slithy toves</div>
+                <div>Did gyre and gimble in the wabe;</div>
+                <div>All mimsy were the borogoves,</div>
+                <div>And the mome raths outgrabe.</div>
+            </div>
+        </div>
+    </div>
+<script>
+    window.onload = function() {
+        var divs = document.getElementsByTagName('div');
+        for (var i = 0; i < divs.length; i++)
+            if (hasClass(divs[i], 'poem-stanza') && !hasClass(divs[i], 'highlight')) {
+                divs[i].className += ' hightlight';
+            }
+        }
+        function hasClass(elem, cls) {
+            var reClass = new RegExp('' + cls + '');
+            return reClass.test('' + elem.className + '');
+        }        
+    };
+</script>    
+<script>
+     $(function() {
+        jQuery('div.poem-stanza').addClass('highlight');
+    });
+</script> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script>
+    function addHighlighClass() {
+        $('div.poem-stanza').addClass('highlight');
+    }
+    $(document).ready(addHighlighClass);
+</script>
+<script>
+    $(document).ready(function() {
+        $('#switcher-large').on('click', function() {
+            $('body').addClass('aumenta');
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#switcher-default').on('click', function() {
+            $('body').removeClass(' reduz ');
+            $('body').removeClass(' aumenta ');
+        });
+        $('#switcher-reduz').on('click', function() {
+            $('body').addClass(' reduz ');
+            $('body').removeClass(' aumenta ');
+        });
+        $('#switcher-aumenta ').on('click', function() {
+            $('body').removeClass(' reduz ');
+            $('body').addClass(' aumenta ');
+        });
+        $(this).addClass('selected');
+        $('#switcher button').removeClass('selecionado');
+    });       
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#switcher-default')
+            .addClass(' selecionado ')
+            .on('click', function() {
+                $('body').removeClass(' reduz ').removeClass(' aumenta ');
+            });
+        $('#switcher-reduz').on('click', function() {
+            $('body').addClass(' reduz ').removeClass(' aumenta ');
+        });
+        $('#switcher-aumenta').on('click', function() {
+            $('body').removeClass(' reduz ').addClass(' aumenta ');
+        });
+    $('#switcher button').on('click', function() {
+        $('#switcher button').removeClass(' selecionado ');
+        $(this).addClass(' selecionado ');
+    });
+ });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#switcher-default')
+            .addClass(' selecionado ')
+            .on('click', function() {
+                $('body').removeClass();
+        });
+        $('#switcher-reduz ').on('click', function() {
+            $('body').removeClass().addClass(' reduz ');
+        });
+        $('#switcher-aumenta ').on('click', function() {
+            $('body').removeClass().addClass(' aumenta ');
+        });
+        $('#switcher button').on('click', function() {
+            $('#switcher button').removeClass(' selecionado ');
+            $(this).addClass(' selecionado ');
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#switcher-default').addClass(' selecionado ');
+        $('#switcher button').on('click', function() {
+            $('body').removeClass();
+            $('#switcher button').removeClass(' selecionado ');
+            $(this).addClass(' selecionado ');
+        });
+        $('#switcher-reduz').on('click', function() {
+            $('body').addClass('reduz');
+        });
+        $('#switcher-aumenta').on('click', function() {
+            $('body').addClass('aumenta');
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#switcher-default').addClass(' selecionado ');
+        $('#switcher button').click(function() {
+            var bodyClass = this.id.split('-')[1];
+            $('body').removeClass().addClass(bodyClass);
+            $('#switcher button').removeClass(' selecionado ');
+            $(this).addClass(' selecionado ');
+        });        
+    });
+</script>
+<button id="switcher-toggle">X</button>
+<script>
+    $('#switcher-toggle').click(function() {
+        $('#switcher').toggleClass('hidden');
+    });
+</script>
+
+</body>
+
+</html>

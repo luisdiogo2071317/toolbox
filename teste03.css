@@ -1,0 +1,28 @@
+div{
+    width: 150px;
+    height: 250px;
+    border:1px solid #999;
+
+}
+div div{
+    width: 25px;
+    height: 25px;
+    background-color:  red;
+    position: absolute;
+}
+.canto{
+    top: 0;
+    left:0;
+}
+.canto2{
+    top: 0;
+    right:0;
+}
+.canto3{
+    bottom: 0;
+    right:0;
+}
+.canto4{
+    bottom: 0;
+    left:0;
+}
