@@ -1,0 +1,13 @@
+[ {
+  "produto" : " produto XYZ",
+  "valor" : 25
+}, {
+  "produto" : "produto XPTO",
+  "valor" : 15
+}, {
+  "produto" : "produto GTO",
+  "valor" : 5
+}, {
+  "produto" : "produto GTO",
+  "valor" : 60
+} ]
