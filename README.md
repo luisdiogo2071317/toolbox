@@ -1,6 +1,22 @@
-# toolbox
-Trabalho escrito que versa sobre web technologies, web design e web usability. 
+cd sr# Acin
 
-Sendo assim, os alunos deverão apresentar na secção de WIKI (do seu repositório) um relatório com uma lista das valências que obteve ao realizar as fichas de trabalho nas aulas, com as respetivas referências aos trabalhos realizados (que deverão constar na secção de CODE).
+> My exquisite Nuxt.js project
 
-Com vista à realização do projeto microsite, deverá também apresentar uma análise das metodologias de organização do CSS (tais como OOCSS, ACSS, BEM, SMACSS...), selecionando uma destas para elaborar o respetivo guia de estilos em sass.
+## Build Setup
+
+``` bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
